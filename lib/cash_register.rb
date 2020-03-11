@@ -13,16 +13,9 @@ class CashRegister
 
   def add_item(item, price, quantity = 1)
     @price = price
-    @total += price * quantity
-    if quantity > 1
-      counter = 0
-      while counter < quantity
-        @items << item
-        counter += 1
-      end
-    else
-      @items << item
-    end
+    @total += price + quantity
+    quantitiy.times(@items << title)
+    @last_transaction = price * quantity
   end
 
   def apply_discount
@@ -41,10 +34,8 @@ class CashRegister
      #return @total to now be 0.0
         if :items.length == 0
            return cash_register.total = 0
-           binding.pry
         end
         #return @total  
     end
 
 end
-
