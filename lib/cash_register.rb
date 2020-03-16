@@ -27,10 +27,4 @@ attr_accessor :total, :discount, :price, :quantity, :items
       "There is no discount to apply."
     end
   end
-
-  def items
-    @items << title
-    @items
-    binding.pry
-  end
 end
